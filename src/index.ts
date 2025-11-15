@@ -2,6 +2,7 @@ import connectDB from "./config/mongodb"
 import express, { Request, Response } from "express"
 import cors from "cors"
 import { on } from "events"
+import bookRouter from "./routes/bookRoutes"
 
 const PORT = 2000
 
@@ -12,6 +13,12 @@ app.use(express.json())
 
 app.get("/", (req: Request, res: Response) => {
   res.json({ status: true })
+})
+
+app.use("/books", bookRouter)
+
+app.use((__, res) => {
+  res.status(404).json({ success: false, error: "No se puede encontrar la petición" })
 })
 
 //servidor en escucha
