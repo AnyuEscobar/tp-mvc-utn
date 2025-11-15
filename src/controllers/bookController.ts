@@ -43,7 +43,7 @@ class BookController {
       const { title, author, publishedYear, genre, available } = body
 
       if (!title || !author || !publishedYear || !genre || !available) {
-        return res.status(400).json({ message: "Datos invalidos" })
+        return res.status(400).json({ message: "Por favor completar todos los datos" })
       }
       const newBook = new Book({ title, author, publishedYear, genre, available })
       await newBook.save()
