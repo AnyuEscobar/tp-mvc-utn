@@ -7,7 +7,7 @@ const bookRouter = Router()
 bookRouter.get("/", BookController.getAllBooks)
 bookRouter.get("/:id", BookController.getBook)
 bookRouter.post("/", BookController.addBook)
-bookRouter.patch("/", BookController.updateBook)
-bookRouter.delete("/", BookController.deleteBook)
+bookRouter.patch("/:id", BookController.updateBook)
+bookRouter.delete("/:id", BookController.deleteBook)
 
 export default bookRouter

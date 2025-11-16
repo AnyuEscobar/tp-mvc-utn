@@ -6,7 +6,7 @@ const bookSchema = new Schema<IBook>({
   title: { type: String, required: true },
   author: { type: String, required: true },
   publishedYear: { type: Number, required: true },
-  genre: { type: String, default: "Inconclusa" },
+  genre: { type: String, default: "Indefinido" },
   available: { type: Boolean, default: true }
 }, {
   versionKey: false
