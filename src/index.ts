@@ -4,6 +4,7 @@ import cors from "cors"
 process.loadEnvFile()
 
 import bookRouter from "./routes/bookRoutes"
+import authRouter from "./routes/authRoutes"
 
 const PORT = process.env.PORT
 
@@ -16,6 +17,7 @@ app.get("/", (req: Request, res: Response) => {
   res.json({ status: true })
 })
 
+app.use("/auth", authRouter)
 app.use("/books", bookRouter)
 
 app.use((__, res) => {

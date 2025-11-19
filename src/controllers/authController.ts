@@ -2,8 +2,11 @@ import { Request, Response } from "express"
 import bcrypt from "bcryptjs"
 import User from "../model/UserModel"
 import jwt from "jsonwebtoken"
+import dotenv from "dotenv"
 
-const SECRET_KEY = 1234
+dotenv.config()
+
+const SECRET_KEY = process.env.JWT_SECRET!
 
 class AuthController {
   static register = async (req: Request, res: Response): Promise<void | Response> => {
