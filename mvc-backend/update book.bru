@@ -4,10 +4,16 @@ meta {
   seq: 4
 }
 
-get {
-  url: http://localhost:2000/books
-  body: none
+patch {
+  url: http://localhost:2000/books/6918963866d9931380644bd3
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "title": "En llamas"
+  }
 }
 
 settings {
