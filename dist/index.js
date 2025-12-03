@@ -22,7 +22,8 @@ app.use(function (__, res) {
     res.status(404).json({ success: false, error: "Algo falló" });
 });
 //servidor en escucha
-app.listen(PORT, function () {
-    console.log("Servidor en escucha en el puerto http://localhost:".concat(PORT));
-    (0, mongodb_1.default)();
+(0, mongodb_1.default)().then(function () {
+    app.listen(PORT, function () {
+        console.log("Servidor en escucha en el puerto http://localhost:".concat(PORT));
+    });
 });

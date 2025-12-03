@@ -6,7 +6,7 @@ process.loadEnvFile()
 import bookRouter from "./routes/bookRoutes"
 import authRouter from "./routes/authRoutes"
 
-const PORT = process.env.PORT || 2000
+const PORT = process.env.PORT || 2000;
 
 const app = express()
 
@@ -25,7 +25,8 @@ app.use((__, res) => {
 })
 
 //servidor en escucha
-app.listen(PORT, () => {
-  console.log(`Servidor en escucha en el puerto http://localhost:${PORT}`)
-  connectDB()
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor en escucha en el puerto http://localhost:${PORT}`)
+  })
 })
