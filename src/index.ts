@@ -1,7 +1,7 @@
 import connectDB from "./config/mongodb"
 import express, { Request, Response } from "express"
 import cors from "cors"
-process.loadEnvFile()
+
 
 import bookRouter from "./routes/bookRoutes"
 import authRouter from "./routes/authRoutes"

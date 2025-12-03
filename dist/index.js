@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mongodb_1 = __importDefault(require("./config/mongodb"));
 var express_1 = __importDefault(require("express"));
 var cors_1 = __importDefault(require("cors"));
-process.loadEnvFile();
 var bookRoutes_1 = __importDefault(require("./routes/bookRoutes"));
 var authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 var PORT = process.env.PORT || 2000;
