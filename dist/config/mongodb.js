@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function () { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
-    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -42,30 +42,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = require("mongoose");
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-var connectDB = function () {
-    return __awaiter(void 0, void 0, void 0, function () {
-        var URI_DB, e_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    URI_DB = process.env.URI_DB;
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, (0, mongoose_1.connect)(URI_DB)];
-                case 2:
-                    _a.sent();
-                    dbName: "mvc-utn";
-                    console.log("Conectado con éxito a Mongo DB");
-                    return [3 /*break*/, 4];
-                case 3:
-                    e_1 = _a.sent();
-                    console.log("Error al conectarse a MongoDB");
-                    process.exit(1);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
-            }
-        });
+var connectDB = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var URI_DB, e_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                URI_DB = process.env.URI_DB;
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, (0, mongoose_1.connect)(URI_DB)];
+            case 2:
+                _a.sent();
+                dbName: "mvc-utn";
+                console.log("Conectado con éxito a Mongo DB");
+                return [3 /*break*/, 4];
+            case 3:
+                e_1 = _a.sent();
+                console.log("Error al conectarse a MongoDB");
+                process.exit(1);
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
+        }
     });
-};
+}); };
 exports.default = connectDB;

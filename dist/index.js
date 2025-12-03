@@ -9,7 +9,7 @@ var cors_1 = __importDefault(require("cors"));
 process.loadEnvFile();
 var bookRoutes_1 = __importDefault(require("./routes/bookRoutes"));
 var authRoutes_1 = __importDefault(require("./routes/authRoutes"));
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 2000;
 var app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
