@@ -5,8 +5,6 @@ dotenv.config()
 
 const connectDB = async () => {
   const URI_DB = process.env.URI_DB
-
-  console.log(URI_DB)
   try {
     await connect(URI_DB)
     dbName: "mvc-utn"
